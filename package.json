@@ -23,8 +23,7 @@
     "friendlyName": "Mailgun",
     "machineDir": "machines/",
     "machines": [
-      "send-plaintext-email",
-      "send-html-email"
+      "send-plaintext-email"
     ]
   }
 }

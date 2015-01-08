@@ -70,10 +70,6 @@ module.exports = {
     var util = require('util');
     var Mailgun = require('mailgun-js');
 
-    // var domain = inputs.domain || 'api.mailgun.net';
-
-    // var mg = new Mailgun(inputs.apiKey);
-    // var mg = mailgun({apiKey: api_key, domain: domain});new Mailgun(inputs.apiKey);
     var mailgun = Mailgun({apiKey: inputs.apiKey, domain: inputs.domain});
 
     // e.g. ['John Doe <john@example.com>']
@@ -108,9 +104,6 @@ module.exports = {
       return exits.success();
     });
 
-
-    // mg.sendText(from, recipients, inputs.subject||'Hello world!', inputs.message||' ', '', {}, function (err){
-    // });
   },
 
 };
