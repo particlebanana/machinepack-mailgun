@@ -1,6 +1,6 @@
 {
   "name": "machinepack-mailgun",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Machines for the Mailgun API.",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha -b"
