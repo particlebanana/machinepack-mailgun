@@ -8,9 +8,19 @@ module.exports = {
       example: 'key-3432afa32e9401482aba183c13f3',
       required: true,
       whereToGet: {
-        url: 'https://mailgun.com/app/domains/sandboxd5f6a672259e4988aa80d8d840649b31.mailgun.org',
-        description: 'Copy the "API Key" listed under "Domain Information" in your Mailgun dashboard.',
+        url: 'https://mailgun.com/cp',
+        description: 'Copy the "API Key" in your Mailgun dashboard.',
         extendedDescription: 'To retrieve your API key, you will first need to log in to your Mailgun account, or sign up for one if you have not already done so.'
+      }
+    },
+    domain: {
+      description: 'The Mailgun domain to use.',
+      example: 'sandbox5f89931913a9ab31130131350101.mailgun.og',
+      required: true,
+      whereToGet: {
+        url: 'https://mailgun.com/cp',
+        description: 'Copy a domain from either "Mailgun Subdomains" or "Custom Domains" in your Mailgun dashboard.',
+        extendedDescription: 'You will first need to log in to your Mailgun account, or sign up for one if you have not already done so.'
       }
     },
     toEmail: {
@@ -58,9 +68,13 @@ module.exports = {
   fn: function(inputs, exits) {
 
     var util = require('util');
-    var Mailgun = require('mailgun').Mailgun;
+    var Mailgun = require('mailgun-js');
 
-    var mg = new Mailgun(inputs.apiKey);
+    // var domain = inputs.domain || 'api.mailgun.net';
+
+    // var mg = new Mailgun(inputs.apiKey);
+    // var mg = mailgun({apiKey: api_key, domain: domain});new Mailgun(inputs.apiKey);
+    var mailgun = Mailgun({apiKey: inputs.apiKey, domain: inputs.domain});
 
     // e.g. ['John Doe <john@example.com>']
     var recipients = [
@@ -83,10 +97,20 @@ module.exports = {
       return util.format('%s <%s>',inputs.fromName, inputs.fromEmail);
     })();
 
-    mg.sendText(from, recipients, inputs.subject||'Hello world!', inputs.message||' ', '', {}, function (err){
+    mailgun.messages().send({
+      from: from,
+      to: recipients,
+      subject: inputs.subject||'Hello world!',
+      text: inputs.message||' ',
+      // attachment: attch
+    }, function (err, body) {
       if (err) return exits.error(err);
       return exits.success();
     });
+
+
+    // mg.sendText(from, recipients, inputs.subject||'Hello world!', inputs.message||' ', '', {}, function (err){
+    // });
   },
 
 };
