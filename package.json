@@ -10,7 +10,11 @@
     "machines",
     "machinepack"
   ],
-  "author": "",
+  "author": "Mike McNeil <mikermcneil>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikermcneil/machinepack-mailgun.git"
+  },
   "license": "MIT",
   "dependencies": {
     "machine": "^1.1.0",
