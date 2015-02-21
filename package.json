@@ -18,6 +18,7 @@
   "license": "MIT",
   "dependencies": {
     "machine": "^1.1.0",
+    "mailcomposer": "^0.2.12",
     "mailgun-js": "^0.6.7"
   },
   "devDependencies": {
@@ -27,7 +28,8 @@
     "friendlyName": "Mailgun",
     "machineDir": "machines/",
     "machines": [
-      "send-plaintext-email"
+      "send-plaintext-email",
+      "send-html-email"
     ]
   }
 }
