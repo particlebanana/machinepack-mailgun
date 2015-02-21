@@ -3,7 +3,7 @@
   "version": "0.3.0",
   "description": "Machines for the Mailgun API.",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha -b"
+    "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
   },
   "keywords": [
     "Mailgun",
@@ -13,7 +13,7 @@
   "author": "Mike McNeil <mikermcneil>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mikermcneil/machinepack-mailgun.git"
+    "url": "git@github.com:mikermcneil/machinepack-mailgun.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -22,7 +22,8 @@
     "mailgun-js": "^0.6.7"
   },
   "devDependencies": {
-    "mocha": "^2.1.0"
+    "mocha": "^2.1.0",
+    "test-machinepack-mocha": "^0.2.2"
   },
   "machinepack": {
     "friendlyName": "Mailgun",
@@ -30,6 +31,7 @@
     "machines": [
       "send-plaintext-email",
       "send-html-email"
-    ]
+    ],
+    "testsUrl": "https://travis-ci.org/mikermcneil/machinepack-mailgun"
   }
 }
