@@ -10,13 +10,10 @@
     "machines",
     "machinepack"
   ],
-  "author": {
-    "name": "Mike McNeil",
-    "email": "mikermcneil"
-  },
+  "author": "Mike McNeil <mikermcneil>",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/mikermcneil/machinepack-mailgun.git"
+    "url": "git@github.com:mikermcneil/machinepack-mailgun.git"
   },
   "license": "MIT",
   "dependencies": {
@@ -36,47 +33,5 @@
       "send-html-email"
     ],
     "testsUrl": "https://travis-ci.org/mikermcneil/machinepack-mailgun"
-  },
-  "gitHead": "6c61deb00cf1e087cbe2e4080d8e2154338498bf",
-  "bugs": {
-    "url": "https://github.com/mikermcneil/machinepack-mailgun/issues"
-  },
-  "homepage": "https://github.com/mikermcneil/machinepack-mailgun#readme",
-  "_id": "machinepack-mailgun@0.4.0",
-  "_shasum": "59c960e4ef6db98897d44aca564d6c804e1d878e",
-  "_from": "machinepack-mailgun@0.4.0",
-  "_npmVersion": "2.12.0",
-  "_nodeVersion": "0.10.37",
-  "_npmUser": {
-    "name": "particlebanana",
-    "email": "particlebanana@gmail.com"
-  },
-  "maintainers": [
-    {
-      "name": "balderdashy",
-      "email": "mike@balderdash.co"
-    },
-    {
-      "name": "sgress454",
-      "email": "scott@balderdash.co"
-    },
-    {
-      "name": "particlebanana",
-      "email": "particlebanana@gmail.com"
-    },
-    {
-      "name": "mikermcneil",
-      "email": "michael.r.mcneil@gmail.com"
-    },
-    {
-      "name": "irl",
-      "email": "irlnathan@gmail.com"
-    }
-  ],
-  "dist": {
-    "shasum": "59c960e4ef6db98897d44aca564d6c804e1d878e",
-    "tarball": "http://registry.npmjs.org/machinepack-mailgun/-/machinepack-mailgun-0.4.0.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://registry.npmjs.org/machinepack-mailgun/-/machinepack-mailgun-0.4.0.tgz"
+  }
 }
