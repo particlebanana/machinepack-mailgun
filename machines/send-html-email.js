@@ -67,8 +67,7 @@ module.exports = {
 
     var util = require('util');
     var Mailgun = require('mailgun-js');
-    var MailComposer = require('mailcomposer').MailComposer;
-    var mailcomposer = new MailComposer();
+    var mailcomposer = require('mailcomposer');
 
     var mailgun = Mailgun({apiKey: inputs.apiKey, domain: inputs.domain});
 
@@ -101,7 +100,7 @@ module.exports = {
     // Strip off last comma
     to = to.slice(0, - 1);
 
-    mailcomposer.setMessageOption({
+    var mail = mailcomposer({
       from: from,
       to: to,
       subject: inputs.subject || 'Hello',
@@ -109,11 +108,11 @@ module.exports = {
       html: inputs.htmlMessage || ''
     });
 
-    mailcomposer.buildMessage(function(mailBuildError, messageSource) {
+    mail.build(function(mailBuildError, message) {
 
       var dataToSend = {
         to: to,
-        message: messageSource
+        message: message.toString('ascii')
       };
 
       mailgun.messages().sendMime(dataToSend, function (err, body) {

@@ -1,6 +1,6 @@
 {
   "name": "machinepack-mailgun",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Machines for the Mailgun API.",
   "scripts": {
     "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
@@ -17,9 +17,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "machine": "^10.3.1",
-    "mailcomposer": "^0.2.12",
-    "mailgun-js": "^0.6.7"
+    "machine": "^11.0.3",
+    "mailcomposer": "^2.1.0",
+    "mailgun-js": "^0.7.2"
   },
   "devDependencies": {
     "mocha": "^2.1.0",
