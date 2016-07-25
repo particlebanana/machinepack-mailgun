@@ -17,7 +17,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "machine": "^11.0.3",
+    "machine": "^12.3.0",
     "mailcomposer": "^2.1.0",
     "mailgun-js": "^0.7.2"
   },

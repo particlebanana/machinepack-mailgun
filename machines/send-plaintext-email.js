@@ -1,7 +1,6 @@
 module.exports = {
   friendlyName: 'Send plaintext email',
   description: 'Send a simple plaintext email.',
-  extendedDescription: '',
   inputs: {
     apiKey: {
       description: 'The API key of the Mailgun account to use.',
@@ -36,12 +35,10 @@ module.exports = {
       extendedDescription: 'If left blank, defaults to the recipient\'s email address.'
     },
     subject: {
-      friendlyName: 'Subject',
       description: 'Subject line for the email.',
       example: 'Welcome, Jane!'
     },
     message: {
-      friendlyName: 'Message',
       description: 'The plaintext body of the email.',
       example: 'Jane,\nThanks for joining our community.  If you have any questions, please don\'t hesitate to send them our way.  Feel free to reply to this email directly.\n\nSincerely,\nThe Management'
     },
@@ -54,15 +51,6 @@ module.exports = {
       friendlyName: 'From (name)',
       description: 'Full name of the sender.',
       example: 'Harold Greaseworthy'
-    }
-  },
-  defaultExit: 'success',
-  exits: {
-    error: {
-      description: 'Unexpected error occurred.'
-    },
-    success: {
-      description: 'Done.'
     }
   },
   fn: function(inputs, exits) {

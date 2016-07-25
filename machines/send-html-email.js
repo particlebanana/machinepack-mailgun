@@ -1,7 +1,6 @@
 module.exports = {
   friendlyName: 'Send html email',
   description: 'Send an html email.',
-  extendedDescription: '',
   inputs: {
     apiKey: {
       description: 'The API key of the Mailgun account to use.',
@@ -52,15 +51,6 @@ module.exports = {
     fromName: {
       description: 'Full name of the sender.',
       example: 'Harold Greaseworthy'
-    }
-  },
-  defaultExit: 'success',
-  exits: {
-    error: {
-      description: 'Unexpected error occurred.'
-    },
-    success: {
-      description: 'Done.'
     }
   },
   fn: function(inputs, exits) {
