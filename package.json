@@ -3,7 +3,7 @@
   "version": "0.5.0",
   "description": "Machines for the Mailgun API.",
   "scripts": {
-    "test": "node ./node_modules/test-machinepack-mocha/bin/testmachinepack-mocha.js"
+    "test": "mocha tests/** -t 10000 -R spec"
   },
   "keywords": [
     "Mailgun",
@@ -22,7 +22,7 @@
     "mailgun-js": "^0.7.2"
   },
   "devDependencies": {
-    "mocha": "^2.1.0",
+    "mocha": "^3.0.0",
     "test-machinepack-mocha": "^2.1.1"
   },
   "machinepack": {
