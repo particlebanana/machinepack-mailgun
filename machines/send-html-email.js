@@ -53,7 +53,7 @@ module.exports = {
       example: 'Harold Greaseworthy'
     }
   },
-  fn: function(inputs, exits) {
+  fn: function(inputs, exits, env) {
 
     var util = require('util');
     var Mailgun = require('mailgun-js');
@@ -104,6 +104,10 @@ module.exports = {
         to: to,
         message: message.toString('ascii')
       };
+
+      if (env.testMode) {
+        dataToSend['o:testmode'] = 'yes';
+      }
 
       mailgun.messages().sendMime(dataToSend, function (err, body) {
         if (err) return exits.error(err);

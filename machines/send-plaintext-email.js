@@ -53,7 +53,7 @@ module.exports = {
       example: 'Harold Greaseworthy'
     }
   },
-  fn: function(inputs, exits) {
+  fn: function(inputs, exits, env) {
 
     var util = require('util');
     var Mailgun = require('mailgun-js');
@@ -81,13 +81,19 @@ module.exports = {
       return util.format('%s <%s>',inputs.fromName, inputs.fromEmail);
     })();
 
-    mailgun.messages().send({
+    var dataToSend = {
       from: from,
       to: recipients,
       subject: inputs.subject||'Hello world!',
       text: inputs.message||' ',
       // attachment: attch
-    }, function (err, body) {
+    };
+
+    if (env.testMode) {
+      dataToSend['o:testmode'] = 'yes';
+    }
+
+    mailgun.messages().send(dataToSend, function (err, body) {
       if (err) return exits.error(err);
       return exits.success();
     });
