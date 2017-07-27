@@ -14,7 +14,6 @@ describe('machinepack-mailgun :: send-plaintext-email', function() {
       fromEmail: 'sueblue@nowhere.com',
       fromName: 'Sue Blue'
     })
-    .meta({testMode: true})
     .exec(done);
 
   });

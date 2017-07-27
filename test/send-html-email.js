@@ -13,9 +13,8 @@ describe('machinepack-mailgun :: send-html-email', function() {
       textMessage: 'What\'s shakin?',
       htmlMessage: 'What&rsquo;s shakin?',
       fromEmail: 'sueblue@nowhere.com',
-      fromName: 'Sue Blue'
+      fromName: 'Sue Blue',
     })
-    .meta({testMode: true})
     .exec(done);
 
   });
