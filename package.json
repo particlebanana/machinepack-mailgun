@@ -3,7 +3,9 @@
   "version": "0.6.0",
   "description": "Machines for the Mailgun API.",
   "scripts": {
-    "test": "mocha tests/** -t 10000 -R spec"
+    "test": "npm run lint && npm run custom-tests",
+    "custom-tests": "node ./node_modules/mocha/bin/mocha test/*.js -R spec -t 10000",
+    "lint": "node ./node_modules/eslint/bin/eslint . --max-warnings=0 && echo '✔  Your code looks good.'"
   },
   "keywords": [
     "Mailgun",
@@ -17,17 +19,17 @@
   },
   "license": "MIT",
   "dependencies": {
-    "machine": "^13.0.0-11",
-    "mailcomposer": "^2.1.0",
-    "mailgun-js": "^0.7.2"
+    "machine": "^15.0.0-2",
+    "mailcomposer": "2.1.0",
+    "mailgun-js": "0.7.15"
   },
   "devDependencies": {
-    "mocha": "^3.0.0",
-    "test-machinepack-mocha": "^2.1.1"
+    "eslint": "3.19.0",
+    "mocha": "3.0.2"
   },
   "machinepack": {
     "friendlyName": "Mailgun",
-    "machineDir": "machines/",
+    "machineDir": "lib/",
     "machines": [
       "send-plaintext-email",
       "send-html-email"
