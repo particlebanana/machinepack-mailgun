@@ -15,7 +15,7 @@ describe('machinepack-mailgun :: send-html-email', function() {
       fromEmail: 'sueblue@nowhere.com',
       fromName: 'Sue Blue'
     })
-    .setEnvironment({testMode: true})
+    .meta({testMode: true})
     .exec(done);
 
   });
