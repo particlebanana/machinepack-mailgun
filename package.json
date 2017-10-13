@@ -1,6 +1,6 @@
 {
   "name": "machinepack-mailgun",
-  "version": "0.8.0-0",
+  "version": "0.8.0-1",
   "description": "Machines for the Mailgun API.",
   "scripts": {
     "test": "npm run lint && npm run custom-tests",
