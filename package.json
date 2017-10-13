@@ -19,7 +19,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "machine": "^15.0.0-2",
+    "machine": "^15.0.0-4",
     "mailcomposer": "2.1.0",
     "mailgun-js": "0.7.15"
   },
@@ -32,7 +32,8 @@
     "machineDir": "lib/",
     "machines": [
       "send-plaintext-email",
-      "send-html-email"
+      "send-html-email",
+      "set-global-defaults"
     ],
     "testsUrl": "https://travis-ci.org/mikermcneil/machinepack-mailgun"
   }
